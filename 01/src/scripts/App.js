@@ -10,6 +10,10 @@ export class App {
 
         // Load Sprites
         this.loader = new Loader(this.app.loader);
-        this.loader.preload();
+        this.loader.preload().then(() => this.start());
+    }
+
+    start() {
+        console.log("The Game Started!");
     }
 }
