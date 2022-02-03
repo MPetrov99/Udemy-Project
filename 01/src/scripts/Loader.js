@@ -1,6 +1,4 @@
-// const bg = require("./sprites/bg.png ");
-
-import { resources } from "pixi.js";
+const bg = require("../sprites/bg.png");
 
 export class Loader {
     constructor(loader) {
@@ -8,10 +6,10 @@ export class Loader {
     }
 
     preload() {
-        if (this.loader === undefined) {
-            return
-        };
-        this.loader.add("bg", "../sprites/bg.png")
+        // if (this.loader === undefined) {
+        //     return
+        // };
+        this.loader.add("bg", bg)
         this.loader.load((loader, resources) => {
             console.log(resources);
         });

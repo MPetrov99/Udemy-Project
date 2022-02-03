@@ -9,7 +9,7 @@ export class App {
         document.body.appendChild(this.app.view);
 
         // Load Sprites
-        this.loader = new Loader(this.app.loade);
+        this.loader = new Loader(this.app.loader);
         this.loader.preload();
     }
 }
