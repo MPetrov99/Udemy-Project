@@ -7,8 +7,6 @@ export class App {
         // Create Canvas
         this.app = new PIXI.Application({ resizeTo: window });
 
-
-
         document.body.appendChild(this.app.view);
 
         // Load Sprites
