@@ -1,4 +1,5 @@
 import * as PIXI from "pixi.js";
+import TWEEN from "@tweenjs/tween.js"
 import { Globals } from "./Globals";
 
 export class PuzzlePiece extends PIXI.utils.EventEmitter {
@@ -52,8 +53,11 @@ export class PuzzlePiece extends PIXI.utils.EventEmitter {
     }
 
     reset() {
-        this.sprite.x = this.field.x;
-        this.sprite.y = this.field.y;
+        const tween = new TWEEN.Tween(this.sprite);
+        tween.to({ x: this.field.x, y: this.field.y }, 300);
+        tween.start();
+        // this.sprite.x = this.field.x;
+        // this.sprite.y = this.field.y;
     }
 
     onTouchEnd() {
