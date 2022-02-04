@@ -23,8 +23,15 @@ export class PuzzleGrid {
             ids = ids.filter(item => item !== id);
 
             const piece = new PuzzlePiece(id, field);
+
+            piece.on("dragend", () => this.onPieceDragend(piece))
+
             this.container.addChild(piece.sprite);
             this.pieces.push(piece);
         });
+    }
+
+    onPieceDragend(piece) {
+        piece.reset();
     }
 }
